@@ -9,7 +9,7 @@ Simply copy DistanceCount.swift to the project tree
 ## Usage
 
 ```swift
-distance(lat1, lon1: lon1, lat2: lat2, lon2: lon2, units: "m")
+DistanceCount.count.distance(lat1, lon1: lon1, lat2: lat2, lon2: lon2, units: "m")
 ```
 
 You can pass different signs for different units:
