@@ -6,19 +6,10 @@
 //
 
 import Foundation
-import Darwin
 
-class DistanceCount: NSObject {
+class DistanceCount {
     
-    let π: Double
-    
-    static let count = DistanceCount()
-    
-    private override init() {
-       π = M_PI 
-    }
-    
-    func distance(lat1: Double, lon1: Double, lat2: Double, lon2: Double, units: String) -> Double {
+    class func distance(lat1: Double, lon1: Double, lat2: Double, lon2: Double, units: String) -> Double {
         let θ = lon1 - lon2
         var distance = sin(º2rad(lat1)) * sin(º2rad(lat2)) + cos(º2rad(lat1)) * cos(º2rad(lat2)) * cos(º2rad(θ))
         distance = acos(distance)
@@ -33,11 +24,11 @@ class DistanceCount: NSObject {
         return (distance);
     }
     
-    private func º2rad(º: Double) -> Double {
-        return (º * π / 180.0);
+    private class func º2rad(_ º: Double) -> Double {
+        return (º * M_PI / 180.0);
     }
     
-    private func rad2º(rad: Double) -> Double {
-        return (rad * 180 / π);
+    private class func rad2º(_ rad: Double) -> Double {
+        return (rad * 180 / M_PI);
     }
 }
